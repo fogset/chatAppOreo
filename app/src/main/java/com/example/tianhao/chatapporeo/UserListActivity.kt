@@ -8,14 +8,16 @@ import android.widget.ListAdapter
 
 class UserListActivity : AppCompatActivity() {
     var userListView: ListView? = null
-    var emails = arrayListOf<String>()
+    var usersEmail = arrayListOf<String>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_list)
 
         userListView = findViewById(R.id.userListView)
-        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1,emails)
-       //userListView.adapter = adapter as ListAdapter?
+        usersEmail.add("hello")
+        usersEmail.add("hi")
+        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, usersEmail)
+        userListView?.adapter = adapter
 
     }
 }

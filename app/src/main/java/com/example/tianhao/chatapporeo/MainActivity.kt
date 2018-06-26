@@ -80,8 +80,8 @@ class MainActivity : AppCompatActivity() {
     }
     fun logIn(){
         //Move to next Activity
-        //val intent = Intent(this, SnapsActivity::class.java)
-        //startActivity(intent)
+        val intent = Intent(this, UserListActivity::class.java)
+        startActivity(intent)
 
     }
 }
