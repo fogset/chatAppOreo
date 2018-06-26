@@ -55,8 +55,7 @@ class UserListActivity : AppCompatActivity() {
 
             var intent = Intent(this, chatActivity::class.java)
             intent.putExtra("username", usersEmail[position])
-//            intent.putExtra("message", snapshot.child("message").value as String)
-//            intent.putExtra("snapKey", snapshot.key)
+
             startActivity(intent)
         }
 
