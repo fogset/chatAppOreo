@@ -1,5 +1,6 @@
 package com.example.tianhao.chatapporeo
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -13,7 +14,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 
 class UserListActivity : AppCompatActivity() {
-    val mAuth = FirebaseAuth.getInstance()
+
     var userListView: ListView? = null
     var usersEmail = arrayListOf<String>()
 
@@ -49,16 +50,16 @@ class UserListActivity : AppCompatActivity() {
 
         })
 
-        userListView?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
-            override fun onNothingSelected(parent: AdapterView<*>?) {
 
-            }
+        userListView?.onItemClickListener = AdapterView.OnItemClickListener { adapterView, view, position, id ->
 
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                
-            }
-
+            var intent = Intent(this, chatActivity::class.java)
+            intent.putExtra("username", usersEmail[position])
+//            intent.putExtra("message", snapshot.child("message").value as String)
+//            intent.putExtra("snapKey", snapshot.key)
+            startActivity(intent)
         }
+
 
     }
 }
