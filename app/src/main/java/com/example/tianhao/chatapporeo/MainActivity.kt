@@ -61,6 +61,8 @@ class MainActivity : AppCompatActivity() {
     }
     fun goClick(view: View){
         //Check if we can log in the user
+        email = emailEditText.text.toString()
+        //Log.i("emails is ", email)
         if (! emailEditText.text.toString().isEmpty() && !emailEditText.text.toString().isEmpty()) {
             mAuth.createUserWithEmailAndPassword(emailEditText.text.toString(), passwordEditText.text.toString())
                     .addOnCompleteListener(this) { task ->
